@@ -1,0 +1,86 @@
+{
+  "header": {
+    "name": "Leonardo Theodoro",
+    "handle": "@leotheodoro",
+    "contactUrls": [
+      {
+        "text": "LinkedIn",
+        "href": "https://www.linkedin.com/in/leonardo-theodoro/"
+      },
+      {
+        "text": "GitHub",
+        "href": "https://github.com/leotheodoro"
+      },
+      {
+        "text": "Email",
+        "href": "mailto:leonardotheodoro@dev.com"
+      }
+    ]
+  },
+  "about": {
+    "title": "About",
+    "description": "Software Engineer with 8+ years of experience building scalable products and backend systems.<br /> <br />Currently working at Robin, where I build and scale systems that ingest, process, and distribute large volumes of candidate data across multiple platforms. I’ve led the development of core infrastructure including a candidate crawler integrating sources like LinkedIn, Indeed, and Monsterboard, reducing update cycles from 24 hours to minutes and significantly improving data freshness.<br /> <br />Before Robin, I co-founded a software consultancy where I led the development of multiple production systems across different industries, from HR platforms to large-scale distribution systems."
+  },
+  "experience": {
+    "title": "Experience",
+    "items": [
+      {
+        "period": "2021 — Now",
+        "title": "Software Engineer @ Robin",
+        "url": "https://recruitrobin.com",
+        "description": "Developing and maintaining the platform's core features and infrastructure."
+      },
+      {
+        "period": "2018 — 2021",
+        "title": "Founder @ Gugale",
+        "url": "https://gugale.com.br",
+        "description": "Founded and sold a software development company to a major Brazilian bank."
+      },
+      {
+        "period": "2018 — 2018",
+        "title": "Intern @ Code49",
+        "url": "https://code49.com.br",
+        "description": "Maintained and enhanced a real estate CRM by developing new features with PHP and SQL while fully refactoring the AngularJS front-end to improve the user experience for property management."
+      }
+    ]
+  },
+  "projects": {
+    "title": "Projects",
+    "items": [
+      {
+        "status": "Completed",
+        "title": "Elmidae",
+        "url": "https://elmidae.com.br",
+        "description": "Machine learning web application that automatically identifies Elmidae beetle genera from uploaded images, built with Next.js and trained on Brazilian aquatic biodiversity data."
+      },
+      {
+        "status": "Completed",
+        "title": "Rabbit",
+        "url": "https://www.rabbit.psc.br/",
+        "description": "Rabbit is a habit-tracking app designed for psychologists to monitor their patients' progress. The system allows admin users (psychologists) to register users, assign habits divided into specific categories, and track user performance through dashboards and leaderboards."
+      },
+      {
+        "status": "Ongoing",
+        "title": "iGAPS",
+        "url": "https://github.com/fmerian/awesome-v0",
+        "description": "A platform to help people have equal opportunities in the job market."
+      },
+      {
+        "status": "Ongoing",
+        "title": "BidTrack",
+        "url": "https://bidtrack.com.br",
+        "description": "Full-stack legal lead management platform that automates judicial document processing from São Paulo Court of Justice, featuring multi-tenant architecture, role-based permissions, and intelligent entity deduplication."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "items": [
+      {
+        "label": "LinkedIn",
+        "text": "leotheodoro",
+        "url": "https://www.linkedin.com/in/leonardo-theodoro/"
+      }
+    ]
+  }
+}

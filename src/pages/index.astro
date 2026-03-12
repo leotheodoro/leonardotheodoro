@@ -1,17 +1,104 @@
 ---
 import Layout from "@/layouts/main.astro"
-import { Button } from "@/components/ui/button"
+import { HugeiconsIcon } from "@hugeicons/react"
+import { ArrowUpRight01Icon } from "@hugeicons/core-free-icons"
+import profileData from "@/data/profile.json"
+import { Image } from "astro:assets"
+import profileImage from "@/assets/me.jpg"
 ---
 
 <Layout>
-  <div class="flex min-h-svh p-6">
-    <div class="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
-      <div>
-        <h1 class="font-medium">Project ready!</h1>
-        <p>You may now add components and start building.</p>
-        <p>We've already added the button component for you.</p>
-        <Button client:load className="mt-2">Button</Button>
-      </div>
+  <div class="min-h-screen bg-white text-black">
+    <div class="mx-auto max-w-3xl px-6 py-16 md:px-8 md:py-24">
+      <header class="mb-16 flex items-center gap-4">
+        <Image src={profileImage} alt={profileData.header.name} width={400} height={400} class="rounded-full w-[100px] h-[100px]" quality={100} loading="eager" />
+        <div>
+          <h1 class="mb-1 text-xl font-normal">{profileData.header.name}</h1>
+          <p class="mb-1 text-sm text-neutral-400">{profileData.header.handle}</p>
+          <div class="flex items-center gap-2">
+            {profileData.header.contactUrls.map((url) => (
+              <a
+                href={url.href}
+                rel="noopener noreferrer"
+                target="_blank"
+                class="inline-flex items-center gap-1 text-sm text-neutral-400 hover:text-black hover:underline underline-offset-4 transition-all"
+              >
+                {url.text}
+                <HugeiconsIcon
+                icon={ArrowUpRight01Icon}
+                size={14}
+                color="currentColor"
+                strokeWidth={1.8}
+              />
+              </a>
+            ))}
+
+          </div>
+        </div>
+      </header>
+
+      <section class="mb-16">
+        <h2 class="mb-4 text-sm font-normal">{profileData.about.title}</h2>
+        <p class="text-sm text-neutral-400" set:html={profileData.about.description} />
+      </section>
+
+      <!-- Experience Section -->
+      <section class="mb-16">
+        <h2 class="mb-6 text-sm font-normal">{profileData.experience.title}</h2>
+        <div class="grid grid-cols-[140px_1fr] gap-x-8 gap-y-6">
+          {profileData.experience.items.map((item) => (
+            <div class="contents">
+              <div class="text-sm text-neutral-400">{item.period}</div>
+              <div>
+                <a
+                  href={item.url}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="mb-2 inline-flex items-center gap-1 text-sm font-normal hover:underline underline-offset-4 transition-all"
+                >
+                  {item.title}
+                  <HugeiconsIcon
+                    icon={ArrowUpRight01Icon}
+                    size={14}
+                    color="currentColor"
+                    strokeWidth={1.8}
+                  />
+                </a>
+                <p class="text-sm leading-relaxed text-neutral-400">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section class="mb-16">
+        <h2 class="mb-6 text-sm font-normal">{profileData.projects.title}</h2>
+        <div class="grid grid-cols-[140px_1fr] gap-x-8 gap-y-6">
+          {profileData.projects.items.map((item) => (
+            <div class="contents">
+              <div class="text-sm text-neutral-400">{item.status}</div>
+              <div>
+                <a
+                  href={item.url}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="mb-2 inline-flex items-center gap-1 text-sm font-normal hover:underline underline-offset-4 transition-all"
+                >
+                  {item.title}
+                  <HugeiconsIcon
+                    icon={ArrowUpRight01Icon}
+                    size={14}
+                    color="currentColor"
+                    strokeWidth={1.8}
+                  />
+                </a>
+                <p class="text-sm leading-relaxed text-neutral-400">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   </div>
 </Layout>
