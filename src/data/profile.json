@@ -60,9 +60,21 @@
         "description": "Rabbit is a habit-tracking app designed for psychologists to monitor their patients' progress. The system allows admin users (psychologists) to register users, assign habits divided into specific categories, and track user performance through dashboards and leaderboards."
       },
       {
+        "status": "Completed",
+        "title": "Would you rather?",
+        "url": "https://wouldyourather-one.vercel.app/",
+        "description": "An AI-powered moral dilemma game that profiles your ethical archetype through 7 escalating scenarios, built with Next.js 15, tRPC, and Claude AI."
+      },
+      {
+        "status": "Completed",
+        "title": "Sticker Trade World Cup 2025",
+        "url": "https://troquefigurinhas.com.br/",
+        "description": "Next.js 15, React 19, TypeScript, Prisma, PostgreSQL, and Tailwind CSS app for managing the 2026 World Cup sticker album. Track duplicates, discover who to trade with using an intelligent compatibility ranking, and find same-city matches with higher weight for foil swaps."
+      },
+      {
         "status": "Ongoing",
         "title": "iGAPS",
-        "url": "https://github.com/fmerian/awesome-v0",
+        "url": "https://gaps.one",
         "description": "A platform to help people have equal opportunities in the job market."
       },
       {
