@@ -1,0 +1,52 @@
+---
+import Layout from "@/layouts/main.astro"
+import { HugeiconsIcon } from "@hugeicons/react"
+import { ArrowUpRight01Icon } from "@hugeicons/core-free-icons"
+import { getCollection } from "astro:content"
+
+const articles = (await getCollection("articles")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+)
+
+const dateFormatter = new Intl.DateTimeFormat("en-US", {
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+  timeZone: "UTC",
+})
+---
+
+<Layout title="Articles — Leonardo Theodoro">
+  <div class="min-h-screen bg-white text-black">
+    <div class="mx-auto max-w-3xl px-6 py-16 md:px-8 md:py-24">
+      <section>
+        <h1 class="mb-6 text-sm font-normal">Articles</h1>
+        <div class="grid grid-cols-[140px_1fr] gap-x-8 gap-y-6">
+          {
+            articles.map((article) => (
+              <div class="contents">
+                <div class="text-sm text-neutral-400">
+                  {dateFormatter.format(article.data.date)}
+                </div>
+                <div>
+                  <a
+                    href={`/articles/${article.id}`}
+                    class="inline-flex items-center gap-1 text-sm font-normal underline-offset-4 transition-all hover:underline"
+                  >
+                    {article.data.title}
+                    <HugeiconsIcon
+                      icon={ArrowUpRight01Icon}
+                      size={14}
+                      color="currentColor"
+                      strokeWidth={1.8}
+                    />
+                  </a>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+    </div>
+  </div>
+</Layout>

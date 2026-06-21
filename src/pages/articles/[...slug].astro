@@ -1,0 +1,39 @@
+---
+import Layout from "@/layouts/main.astro"
+import { getCollection, render } from "astro:content"
+import type { GetStaticPaths } from "astro"
+
+export const getStaticPaths = (async () => {
+  const articles = await getCollection("articles")
+  return articles.map((article) => ({
+    params: { slug: article.id },
+    props: { article },
+  }))
+}) satisfies GetStaticPaths
+
+const { article } = Astro.props
+const { Content } = await render(article)
+
+const formattedDate = new Intl.DateTimeFormat("en-US", {
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+  timeZone: "UTC",
+}).format(article.data.date)
+---
+
+<Layout title={`${article.data.title} — Leonardo Theodoro`}>
+  <div class="min-h-screen bg-white text-black">
+    <div class="mx-auto max-w-3xl px-6 py-16 md:px-8 md:py-24">
+      <article>
+        <header class="mb-8">
+          <h1 class="mb-2 text-xl font-normal">{article.data.title}</h1>
+          <p class="text-sm text-neutral-400">{formattedDate}</p>
+        </header>
+        <div class="article-content">
+          <Content />
+        </div>
+      </article>
+    </div>
+  </div>
+</Layout>
