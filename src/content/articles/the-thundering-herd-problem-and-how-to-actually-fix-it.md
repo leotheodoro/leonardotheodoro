@@ -150,4 +150,4 @@ None of these fixes are exotic. They all boil down to the same underlying idea: 
 | Worker wakeups | Wasted context switches | Exclusive wake / atomic job claim |
 | Retry storms | Repeated synchronized retries | Backoff with jitter |
 
-Conclusão da conclusão: if a lot of things are reacting to one thing at the same time, add either **coordination** (only one of them should actually do the work) or **randomness** (spread the reaction out over time). Almost every thundering herd fix is one of those two ideas wearing a different costume.
+Short version: if a lot of things are reacting to one thing at the same time, add either **coordination** (only one of them should actually do the work) or **randomness** (spread the reaction out over time). Almost every thundering herd fix is one of those two ideas wearing a different costume.
